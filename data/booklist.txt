@@ -1,0 +1,98 @@
+#   
+#   Kategorie                                                  ;    Autor    ;    Název díla    ;    Literární druh       
+#       1 = Světová a česká literatura do konce 18. století
+#       2 = Světová a česká literatura do konce 19. století
+#       3 = Světová literatura 20. a 21. století
+#       4 = Česká literatura do konce 20. a 21. století
+#
+
+
+1 ; Boccaccio Giovanni ; Dekameron ; próza
+1 ; Defoe Daniel ; Robinson Crusoe ; próza
+1 ; Komenský Jan Amos ; Labyrint světa a ráj srdce ; próza
+1 ; Moliére ; Lakomec ; drama
+1 ; Shakespeare William ; Romeo a Julie ; drama
+1 ; Shakespeare William ; Zkrocení zlé ženy ; drama
+
+2 ; Arbes Jakub ; Svatý Xaverius ; próza
+2 ; Otčenášek Jan ; Romeo, Julie a tma ; próza
+2 ; Balzac Honore de ; Otec Goriot ; próza
+2 ; Borovský Karel Havlíček ; Tyrolské elegie ; poezie
+2 ; Čech Svatopluk ; Nový epochální výlet pana Broučka, tentokráte do XV. Století ; próza
+2 ; Erben Karel Jaromír ; Kytice ; poezie
+2 ; Gogol Nikolaj Vasiljevič ; Revizor ; drama
+2 ; Hugo Victor ; Chrám Matky Boží v Paříži ; próza
+2 ; Jirásek Alois ; Staré pověsti české ; próza
+2 ; Mácha Karel Hynek ; Máj ; poezie
+2 ; Maupassant Guy de ; Kulička ; próza
+2 ; Mrštíkové Alois a Vilém ; Maryša ; drama
+2 ; Němcová Božena ; Babička ; próza
+2 ; Neruda Jan ; Povídky malostranské ; próza
+2 ; Poe Edgar Alan ; Jáma a kyvadlo ; próza
+2 ; Puškin Alexandr Sergejevič ; Piková dáma ; próza
+2 ; Twain Mark ; Dobrodružství Toma Sawyera ; próza
+2 ; Tyl Josef Kajetán ; Strakonický dudák ; drama
+2 ; Jaroslav Vrchlický ; Noc na Karlštejně ; drama
+2 ; Zeyer Julius ; Radúz a Mahulena ; drama
+
+3 ; Boulle Pierre ; Most přes řeku Kwai ; próza
+3 ; Bradbury Ray ; 451 stupňů Fahrenheita ; próza
+3 ; Clarke Arthur C. ; Vesmírná odyssea ; próza
+3 ; Anna Franková ; Deník Anny Frankové ; próza
+3 ; Exupéry Antoine de Saint ; Malý princ ; próza
+3 ; Fitzgerald Francis Scott ; Velký Gatsby ; próza
+3 ; Hemingway Ernest ; Stařec a moře ; próza
+3 ; Hemingway Ernest ; Komu zvoní hrana ; próza
+3 ; Kerouac Jack ; Na cestě ; próza
+3 ; Kesey Ken ; Vyhoďme ho z kola ven ; próza
+3 ; Mann Thomas ; Mario a kouzelník ; próza
+3 ; Merle Robert ; Smrt je mým řemeslem ; próza
+3 ; Orwell George ; Farma zvířat ; próza
+3 ; Pratchett Terry ; Zaslaná pošta ; próza
+3 ; Remarque Erich Maria ; Na západní frontě klid ; próza
+3 ; Remarque Erich Maria ; Tři kamarádi ; próza
+3 ; Rolland Romain ; Petr a Lucie ; próza
+3 ; Rowlingová Joanne ; Harry Potter a Kámen mudrců ; próza
+3 ; Ryan Patrick ; Jak jsem vyhrál válku ; próza
+3 ; Shaw George Bernard ; Pygmalion ; drama
+3 ; Steinbeck John ; O myších a lidech ; próza
+3 ; Styron William ; Sophiina volba ; próza
+3 ; Tolkien J.R.R. ; Pán prstenů: Společenstvo prstenu ; próza
+
+4 ; Banáš Jozef ; Jsem Baťa, dokážu to! ; próza
+4 ; Bezruč Petr ; Slezské písně ; poezie
+4 ; Čapek Karel ; Válka s mloky ; próza
+4 ; Čapek Karel ; Matka ; drama
+4 ; Čapek Karel ; RUR ; drama
+4 ; Čapek Karel ; Bílá nemoc ; drama
+4 ; Divadlo Járy Cimrmana (Smoljak/Svěrák) ; Vizionář ; drama
+4 ; Dousková Irena ; Hrdý Budžes ; próza
+4 ; Drda Jan ; Němá barikáda ; próza
+4 ; Dyk Viktor ; Krysař ; próza
+4 ; Fuks Ladislav ; Spalovač mrtvol ; próza
+4 ; Fuks Ladislav ; Pan Theodor Mundstock ; próza
+4 ; Hartl Patrik ; Prvok, Šampón, Tečka a Karel ; próza
+4 ; Hašek Jaroslav ; Osudy dobrého vojáka Švejka za světové války (1. díl) ; próza
+4 ; Havel Václav ; Audience ; drama
+4 ; Hrabal Bohumil ; Obsluhoval jsem anglického krále ; próza
+4 ; Hrabal Bohumil ; Ostře sledované vlaky ; próza
+4 ; Hrabal Bohumil ; Postřižiny ; próza
+4 ; Hrubín František ; Romance pro křídlovku ; próza
+4 ; Jirotka Zdeněk ; Saturnin ; próza
+4 ; John Radek ; Memento ; próza
+4 ; Kafka Franz ; Proměna ; próza
+4 ; Kaplický Václav ; Kladivo na čarodějnice ; próza
+4 ; Kundera Milan ; Žert ; próza
+4 ; Lustig Arnošt ; Modlitba pro Kateřinu Horowitzovou ; próza
+4 ; Nezval Vítězslav ; Edison ; poezie
+4 ; Otčenášek Jan ; Romeo , Julie a tma ; próza
+4 ; Pavel Ota ; Smrt krásných srnců ; próza
+4 ; Poláček Karel ; Bylo nás pět ; próza
+4 ; Seifert Jaroslav ; Maminka ; poezie
+4 ; Šabach Petr ; Občanský průkaz ; próza
+4 ; Škvorecký Josef ; Zbabělci ; próza
+4 ; Škvorecký Josef ; Prima sezóna ; próza
+4 ; Viewegh Michal ; Výchova dívek v Čechách ; próza
+4 ; Viewegh Michal ; Báječná léta pod psa ; próza
+4 ; Voskovec Jiří, Werich Jan ; Caesar ; drama
+4 ; Wolker Jiří ; Těžká hodina ; poezie

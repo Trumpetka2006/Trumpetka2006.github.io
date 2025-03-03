@@ -1,1 +1,292 @@
-HelloWorld
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Selector</title>
+    <script src="scr/pdf-lib.js"></script>
+    <script src="scr/font-kit.js"></script>
+    <script src="scr/pdf-gen.js"></script>
+    <script src="scr/page.js"></script>
+    <script src="scr/main.js"></script>
+    <style>
+        :root {
+            --book-selector-dark-color: rgb(0, 53, 70);
+            --book-selector-header-color: rgb(217, 250, 255);
+            --book-selector-header-hover-color: rgb(200, 248, 255);
+            --book-selector-record-color: rgb(106, 235, 255);
+            --book-selector-record-hover-color: rgb(243, 253, 255);
+            --book-selector-record-selected-color: rgb(52, 223, 0);
+            --book-selector-record-selected-hover-color: rgb(245, 255, 243);
+            --book-selector-button-color-1: rgb(0, 197, 223);
+            --book-selector-button-color-2: rgb(0, 182, 206);
+            --book-selector-button-color-3: rgb(0, 162, 184);
+            --book-selector-button-disabled-1: rgb(184, 184, 184);
+            --book-selector-button-disabled-2: rgb(75, 95, 100);
+            --book-selector-info-nok: rgb(255, 217, 217);
+            --book-selector-info-text-nok: rgb(141, 0, 0);
+            --book-selector-info-ok: rgb(243, 253, 255);
+            --book-selector-info-text-ok: rgb(0, 165, 8);
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .book-selector-main {
+            width: calc(100% - 1rem);
+            max-width: 900px;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 2rem;
+        }
+
+        /* info */
+
+        .book-selector-info {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            width: calc(100% - 2rem);
+            padding: 1rem;
+            background-color: var(--book-selector-info-ok);
+            color: var(--book-selector-info-text-ok);
+            margin-bottom: 2rem;
+            border: none;
+            border-radius: 0.8rem;
+        }
+
+        .book-selector-info-nok {
+            background-color: var(--book-selector-info-nok);
+            color: var(--book-selector-info-text-nok);
+        }
+
+        .book-selector-info-data {
+            display: flex;
+            flex-direction: row;
+            gap: 0.6rem;
+        }
+
+        .book-selector-info-key {
+            font-weight: 900;
+            width: fit-content;
+        }
+
+        .book-selector-info-key::after {
+            content: ":";
+        }
+
+        @media screen and (max-width: 500px) {
+            .book-selector-info-data {
+                flex-direction: column;
+                gap: 0.1rem;
+            }
+        }
+
+        @media screen and (max-height: 900px) and (max-width: 500px) {
+            .book-selector-info {
+                position: relative;
+            }
+        }
+
+        /* selector */
+
+        .book-selector-container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .book-selector-header {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            width: calc(100% - 2rem);
+            padding: 1rem;
+            background-color: var(--book-selector-header-color);
+            color: var(--book-selector-dark-color);
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 0.8rem;
+        }
+
+        .book-selector-header:hover {
+            cursor: pointer;
+            background-color: var(--book-selector-header-hover-color);
+        }
+
+        .book-selector-triangle-open {
+            width: 1.1rem;
+            height: 0.9rem;
+            clip-path: polygon(0 0, 50% 100%, 100% 0);
+            background-color: var(--book-selector-dark-color);
+        }
+
+        .book-selector-triangle-close {
+            width: 0.9rem;
+            height: 1.1rem;
+            clip-path: polygon(0 0, 0% 100%, 100% 50%);
+            background-color: var(--book-selector-dark-color);
+            margin-right: 0.2rem;
+        }
+
+        .book-selector-header-text {
+            width: calc(100% - 3rem);
+        }
+
+        .book-selector-record {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            width: calc(100% - 2.6rem);
+            padding: 0.8rem 1.2rem;
+            border-radius: 0.8rem;
+            border: solid 0.1rem var(--book-selector-record-color);
+            border-right-width: 0.1rem;
+        }
+
+        .book-selector-record:hover {
+            cursor: pointer;
+            background-color: var(--book-selector-record-hover-color);
+        }
+
+        .book-selector-record-selected {
+            border: solid 0.1rem var(--book-selector-record-selected-color);
+            width: calc(100% - 2.8rem);
+            border-right: solid 0.3rem var(--book-selector-record-selected-color);
+        }
+
+        .book-selector-record-selected:hover {
+            cursor: pointer;
+            background-color: var(--book-selector-record-hover-color);
+        }
+
+        .book-selector-data {
+            display: flex;
+            flex-direction: row;
+            gap: 0.6rem;
+        }
+
+        .book-selector-key {
+            white-space: nowrap;
+            color: var(--book-selector-dark-color);
+            font-weight: 900;
+            width: fit-content;
+        }
+
+        .book-selector-key::after {
+            content: ":";
+        }
+
+        /* inputs */
+
+        .book-selector-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .book-selector-inputs input {
+            width: 22rem;
+            max-width: 100%;
+            font-size: 1rem;
+            padding: 0.8rem 1.2rem;
+            border: solid 0.1rem var(--book-selector-dark-color);
+            border-radius: 1.2rem;
+            color: var(--book-selector-dark-color);
+        }
+
+        .book-selector-inputs input::placeholder {
+            color: var(--book-selector-dark-color);
+        }
+
+        /* button */
+
+        .book-selector-generate-pdf-button {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        #book-selector-generate-pdf-button {
+            max-width: 24.5rem;
+            width: 100%;
+            height: 3rem;
+
+            border: none;
+            border-radius: 0.8rem;
+
+            font-size: 0.9rem;
+            font-weight: 900;
+            font-family: 'Roboto', sans-serif;
+
+            background-color: var(--book-selector-button-color-1);
+            color: var(--book-selector-dark-color);
+        }
+
+        #book-selector-generate-pdf-button:hover {
+            cursor: pointer;
+            background-color: var(--book-selector-button-color-2);
+        }
+
+        #book-selector-generate-pdf-button:active {
+            cursor: pointer;
+            background-color: var(--book-selector-button-color-3);
+        }
+
+        #book-selector-generate-pdf-button:disabled {
+            background-color: var(--book-selector-button-disabled-1);
+            color: var(--book-selector-button-disabled-2);
+        }
+
+        #book-selector-generate-pdf-button:disabled:hover {
+            cursor: not-allowed;
+            background-color: var(--book-selector-button-disabled-1);
+        }
+
+        #book-selector-generate-pdf-button:disabled:active {
+            cursor: not-allowed;
+            background-color: var(--book-selector-button-disabled-1);
+        }
+
+        /* sign */
+
+        #book-selector-sign {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            font-size: 12px;
+            color: rgb(163, 163, 163);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="book-selector-main" class="book-selector-main"></div>
+    <div class="book-selector-main">
+        <form class="book-selector-inputs" id="book-selector-submit-form">
+            <input type="text" name="book-selector-user-name" placeholder="Jméno a příjmení" required>
+            <input type="text" name="book-selector-user-class" placeholder="Třída" required>
+            <div class="book-selector-generate-pdf-button">
+                <button type="submit" id="book-selector-generate-pdf-button" disabled>Stáhnout seznam
+                    (PDF)</button>
+            </div>
+        </form>
+    </div>
+    <div id="book-selector-sign" class="book-selector-main"></div>
+</body>
+
+</html>
